@@ -1,0 +1,131 @@
+.marble-text {
+    background: url('https://as1.ftcdn.net/v2/jpg/04/64/46/98/1000_F_464469871_dZ7MsVn5YKxShMBsstxoMU7X4v3dmxZE.jpg');
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Search Bar */
+.search-bar-container {
+    position: relative;
+    margin-top: 75px;
+  }
+  
+  .search-bar {
+    width: 300px;
+    padding: 8px 12px;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    font-family: "Luxurious Roman", serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: #000000;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .search-bar:focus {
+    outline: none;
+    border-color: #c69a2a;
+  }
+  
+  .search-btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    color: #000000;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .search-btn:hover {
+    color: #c69a2a;
+  }
+
+  /* Main container */
+.artwork-view {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Header styling */
+.artwork-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.artwork-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* Search bar */
+.artwork-search-bar {
+  margin-bottom: 20px;
+}
+
+/* Artwork container */
+.artwork-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Individual artwork */
+.artwork-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.artwork-item:hover {
+  transform: translateY(-5px);
+}
+
+.artwork-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px 8px 0 0;
+}
+
+.artwork-item-info {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.artwork-item-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.artwork-item-description {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-image: url("https://professionals.tarkett.com/media/img/M/THH_24644030_001.jpg");
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #a77b1c;
+  }
+  
+  
+  

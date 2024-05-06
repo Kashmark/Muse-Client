@@ -1,0 +1,52 @@
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: "Luxurious Roman", serif;
+  color-scheme: light dark;
+  color: rgba(10, 0, 0, 0.87);
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* .marble-text {
+  background: url('https://tinostone.com/wp-content/uploads/2016/09/Tabla-marquina.jpg');
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
+
+.luxurious-roman-regular {
+  font-family: "Luxurious Roman", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+a {
+  font-weight: 500;
+  color: #000000;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #c69a2a;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+
+
+
+

@@ -1,0 +1,30 @@
+.welcome-container {
+    text-align: center;
+    margin-top: 50px; /* Adjust margin-top as needed */
+  }
+  
+  .welcome-title {
+    font-size: 3.5em;
+    font-weight: 600;
+    color: #c69a2a; /* Gold color */
+    margin-bottom: 10px;
+  }
+  
+  .welcome-definition {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #444444; /* Dark gray color */
+    margin-bottom: 20px;
+  }
+  
+  .welcome-description {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #666666; /* Light gray color */
+    margin-bottom: 10px;
+  }
+  
+  .welcome-description:last-child {
+    margin-bottom: 0; /* Remove margin for the last description */
+  }
+  
