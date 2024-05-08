@@ -1,0 +1,105 @@
+/* Artist container */
+.artist-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Individual artist */
+.artist-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(to left, #141e30, #243b55);
+}
+
+.artist-item:hover {
+    transform: translateY(-5px);
+    color: #c69a2a; /* Gold color */
+}
+
+.artist-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px 8px 0 0;
+}
+
+.artist-item-info {
+    padding: 15px;
+    background-color: #fff;
+}
+
+.artist-item-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #c69a2a; /* Gold color */
+    margin-bottom: 10px;
+}
+
+.artist-item-description {
+    font-size: 0.9rem;
+    color: #c69a2a; /* Gold color */
+}
+
+/* Marble text */
+.marble-text {
+    background: url('https://as1.ftcdn.net/v2/jpg/04/64/46/98/1000_F_464469871_dZ7MsVn5YKxShMBsstxoMU7X4v3dmxZE.jpg');
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Search Bar */
+.search-bar-container {
+    position: relative;
+    margin-top: 75px;
+    margin-bottom: 40px;
+}
+
+.search-bar {
+    width: 300px;
+    padding: 8px 12px;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    font-family: "Luxurious Roman", serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: #c69a2a; /* Gold color */
+    background-color: #ffffff;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #c69a2a;
+}
+
+.search-btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    color: #000000;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.search-btn:hover {
+    color: #c69a2a;
+}
+
+h1 {
+    padding-top: 90px;
+}
+.white-text {
+    color: white;
+  }
+  
+
+  

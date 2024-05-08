@@ -145,7 +145,7 @@ export const NewArtwork = ({ currentUser }) => {
         <div className="form-group">
           <label>Category</label>
           {allCategories.map((category) => (
-            <div key={category.id}>
+            <div key={category.id} className="category-checkbox">
               <label>
                 <input
                   type="checkbox"

@@ -31,30 +31,32 @@ export const ArtistView = ({ currentUser }) => {
       <div className="main">
         <div className="border">
           <div className="inner-cutout">
-            <h1 className="marble-text">
+            <h1 className="artist-header">
              Artists
             </h1>
           </div>
         </div>
       </div>
       <article className="text-light">
-        <div className="text-dark artist-search">
+        <div className="search-bar-container">
           <ArtistSearchBar setSearchTerm={setSearchTerm} />
         </div>
-        {filteredArtists.map((artist) => (
-          <div
-            className="artists artist-container"
-            key={artist.id} 
-          >
-            <Link to={`/artists/${artist.id}`}>
-              <Artist
-                artist={artist}
-                key={artist.id}
-                currentUser={currentUser}
-              />
-            </Link>
-          </div>
-        ))}
+        <div className="artist-container">
+          {filteredArtists.map((artist) => (
+            <div
+              className="artist-item"
+              key={artist.id} 
+            >
+              <Link to={`/artists/${artist.id}`}>
+                <Artist
+                  artist={artist}
+                  key={artist.id}
+                  currentUser={currentUser}
+                />
+              </Link>
+            </div>
+          ))}
+        </div>
       </article>
     </div>
   );

@@ -29,6 +29,8 @@ nav {
     border-radius: 10px;
     background: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 20px -5px;
+    z-index: 1000; /* Set a high z-index to ensure it's on top of everything */
+
   }
   
   

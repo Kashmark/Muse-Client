@@ -1,7 +1,9 @@
+// ArtistDetails.jsx
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getAllArtists, getAllArtworks } from '../../services/resourceServices.js';
 import { Artwork } from '../Artwork/Artwork.jsx';
+import './Artist.css'; // Import CSS for ArtistDetails styling
 
 export const ArtistDetails = () => {
     const [artist, setArtist] = useState(null);
@@ -30,15 +32,18 @@ export const ArtistDetails = () => {
     }, [artistId]);
 
     return (
-        <div>
+        <div className="artist-details-container"> {/* Apply container class */}
+        <h1>Artist's Active Stock</h1>
             {artist ? (
-                <div>
-                    <h2>{artist.user?.first_name} {artist.user?.last_name}</h2>
-                    <p>Bio: {artist.bio}</p>
-                    <h3>Artworks</h3>
-                    <ul>
+                <div className="artist-details">
+                    <h2 className="artist-name">{artist.user?.first_name} {artist.user?.last_name}</h2>
+                    <p className="artist-bio">Bio: {artist.bio}</p>
+                    <h3 className="artworks-header">Artworks</h3>
+                    <ul className="artworks-list"> {/* Apply list class */}
                         {artworks.map((artwork) => (
-                            <li key={artwork.id}>
+                            <li key={artwork.id} className="artwork-item" style={{
+                                backgroundImage: `url(${artwork.picture_url})`, // Assuming artwork has an image property
+                              }}> {/* Apply item class */}
                                 <Artwork artwork={artwork} />
                             </li>
                         ))}
@@ -50,4 +55,3 @@ export const ArtistDetails = () => {
         </div>
     );
 };
-

@@ -1,8 +1,10 @@
+// MyArt.jsx
 import React, { useEffect, useState } from "react";
 import { getAllArtists, getAllArtworks, deleteArtwork } from "../../services/resourceServices.js";
 import { Artwork } from "./Artwork.jsx"; // Import your Artwork component
 import { Link } from "react-router-dom";
 import { ArtworkSearchBar } from "./ArtworkSearchBar.jsx"; // Assuming you have an ArtworkSearchBar component
+import "./Artwork.css"; // Import the CSS file for MyArt styling
 
 export const MyArt = ({ currentUser }) => {
   const [allArtworks, setAllArtworks] = useState([]);
@@ -57,7 +59,7 @@ export const MyArt = ({ currentUser }) => {
         <div className="border">
           <div className="inner-cutout">
             <h1 className="marble-text">
-             Artworks
+             My Works
             </h1>
           </div>
         </div>
@@ -71,7 +73,7 @@ export const MyArt = ({ currentUser }) => {
             style={{
               backgroundImage: `url(${artwork.picture_url})`, // Assuming artwork has an image property
             }}
-            className="artworks artwork-container"
+            className="artworks artwork-item"
             key={artwork.id} // Assuming artwork has an id property
           >
             <Link to={`/artworks/${artwork.id}`}>
@@ -82,9 +84,9 @@ export const MyArt = ({ currentUser }) => {
               />
             </Link>
             <Link to={`/edit-artwork/${artwork.id}`}>
-              <button>Edit</button>
+              <button className="edit-button">Edit</button>
             </Link>
-            <button onClick={() => handleDelete(artwork.id)}>Delete</button>
+            <button className="delete-button" onClick={() => handleDelete(artwork.id)}>Delete</button>
           </div>
         ))}
       </article>

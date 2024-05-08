@@ -1,3 +1,4 @@
+import "./Artist.css"
 export const ArtistSearchBar = ({ setSearchTerm }) => {
     return (
       <input
@@ -6,7 +7,7 @@ export const ArtistSearchBar = ({ setSearchTerm }) => {
         }}
         type="text"
         placeholder="Search Artists"
-        className="artist-search"
+        className="search-bar"
       />
     );
   };

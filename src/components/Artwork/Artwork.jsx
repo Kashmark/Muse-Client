@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { createOrder, createOrderArtwork } from "../../services/resourceServices.js";
 import "./Artwork.css";
-import { useState, useEffect } from "react";
 
 export const Artwork = ({ artwork }) => {
     const [currentUser, setCurrentUser] = useState({});
@@ -15,44 +14,35 @@ export const Artwork = ({ artwork }) => {
   
     const handleAddToCart = async () => {
       try {
-        // Create a new order
-        console.log(currentUser.id);
         const newOrder = await createOrder({
-          payment_type: 1,
+          payment_type: 4,
           user: currentUser.id
         });
   
-        // Create a new order artwork with the artwork id and the order id
         await createOrderArtwork(artwork, newOrder);
   
-        // You can add any success notification or redirect logic here if needed
         console.log("Artwork added to cart successfully!");
       } catch (error) {
         console.error("Error adding artwork to cart:", error);
-        // You can add error handling logic here if needed
       }
     };
   
     return (
       <section className="artwork-container">
-        <header className="artwork-info">
-          <span className="marble-text">{artwork.title}</span>
-        </header>
-        <div className="artwork-info">
-          Artist: <span className="marble-text">{artwork.artist.user.first_name} {artwork.artist.user.last_name}</span>
-        </div>
-        <div className="artwork-info">
-          Medium: <span className="marble-text">{artwork.medium.type}</span>
-        </div>
-        <div className="artwork-info">
-          Price: <span className="marble-text">{artwork.price}</span>
-        </div>
-        <div className="artwork-info">
-          Description: <span className="marble-text">{artwork.description}</span>
+        <div className="artwork-card">
+          <img src={artwork.imageUrl} alt={artwork.title} />
+          <div className="artwork-text">
+            <h2 className="artwork-title">{artwork.title}</h2>
+            <p className="artwork-artist"> {artwork.artist.user.first_name} {artwork.artist.user.last_name}</p>
+            <p className="artwork-medium"> {artwork.medium.type}</p>
+            <p className="artwork-price"> - Price - {artwork.price}</p>
+            <p className="artwork-description">- Title - {artwork.description}</p>
+          </div>
         </div>
         <button className="add-to-cart-btn" onClick={handleAddToCart}>Add to Cart</button>
       </section>
     );
   };
+
   
 

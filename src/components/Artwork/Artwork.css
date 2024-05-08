@@ -69,18 +69,26 @@
 
 /* Artwork container */
 .artwork-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
+    display: flex; /* Change to flexbox layout */
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px;
+    padding-bottom: 50px; /* Ensure space for the button */
+    position: relative;
+  }
 
 /* Individual artwork */
 .artwork-item {
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    background-size: cover; /* Ensure the image covers the entire container */
+  }
+
+  .artwork-item img {
+    display: none; /* Hide the img element */
+  }
 
 .artwork-item:hover {
   transform: translateY(-5px);
@@ -94,11 +102,13 @@
 }
 
 .artwork-item-info {
+    
   padding: 15px;
   background-color: #fff;
 }
 
 .artwork-item-title {
+
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 5px;
@@ -111,7 +121,8 @@
 
 /* Add to Cart Button */
 .add-to-cart-btn {
-    display: inline-block;
+    margin-top: auto; /* Push the button to the bottom */
+    align-self: center; /* Center horizontally */
     padding: 10px 20px;
     font-size: 1em;
     font-weight: bold;
@@ -126,6 +137,188 @@
   .add-to-cart-btn:hover {
     background-color: #a77b1c;
   }
+
+  h1 {
+    padding: 10px;
+  }
+
+  div {
+    margin-top: 10px;
+  }
   
+  /* Edit and Delete Buttons */
+.edit-button,
+.delete-button {
+    padding: 10px 20px; /* Consistent padding */
+    font-size: 1em;
+    width: 127px;
+    font-weight: bold;
+    color: #fff;
+    background-image:url("https://img.freepik.com/premium-photo/green-gold-marble-seamless-pattern-emerald-marble-textured-background-abstract-green-stone_2500-1124.jpg");
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px; /* Adjust spacing */
+    margin-bottom: 15px;
+}
+
+.delete-button {
+    background-image: url("https://t4.ftcdn.net/jpg/06/09/29/07/360_F_609290752_6q6OTD4wOfNLrED3g7IV72e3ZIs2iipU.jpg");
+    align-self: center; /* Align button to the end of the flex container */
+
+}
+
+/* Hover Effects */
+.edit-button:hover,
+.delete-button:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+.delete-button:hover {
+    background-color: #f44336; /* Darker red */
+}
+
+.create-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .create-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #f7f4f4;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #c69a2a;
+  }
+  
+  .select-control {
+    position: relative;
+  }
+  
+  .select-control::after {
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  .btn-dark {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-dark:hover {
+    background-color: #555;
+  }
+
+  .form-group .category-checkbox {
+    display: inline-block;
+    width: 45%; /* Adjust the width as needed */
+    margin-right: 10px;
+  }
+  
+  .form-group .category-checkbox label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .form-group .category-checkbox input[type="checkbox"] {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+/* Artwork.css */
+
+.artwork-card {
+    width: 160px;
+    border-radius: px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex; /* Display as flex container */
+}
+
+
+
+.artwork-text {
+    padding: 25px;
+    color: #c69a2a; /* Gold color */
+    width: 500px;
+    background: linear-gradient(to left, #141e30, #243b55);
+    flex-grow: 1; /* Expand to fill remaining space */
+}
+
+.artwork-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.artwork-artist,
+.artwork-medium,
+.artwork-price,
+.artwork-description {
+    font-size: 1.3rem;
+    color: #c69a2a; /* Gold color */
+    margin-bottom: 5px;
+}
+
+/* ArtworkDetails.css */
+
+.artwork-details-image {
+    width: 100%; /* Ensure the image takes up the full width of its container */
+    border: 2px solid #333; /* Add a border with a solid color */
+    border-radius: 8px; /* Add rounded corners to the image */
+    margin-top: 20px; /* Add some space between the text and the image */
+}
+
+
+/* ArtworkDetails.css */
+
+.artwork-details-container {
+    margin-top: 100px; /* Adjust this value based on the height of your navbar */
+}
+
   
   
